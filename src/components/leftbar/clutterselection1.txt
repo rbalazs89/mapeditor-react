@@ -1,0 +1,35 @@
+//src/components/leftbar/ClutterSelection.js
+import React from 'react';
+import clutterImages from '../../import/clutter'; // Import the generated clutter file
+
+
+const ClutterSelection = () => {
+  const imageKeys = Object.keys(clutterImages);
+
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2px', padding: '8px', backgroundColor: 'var(--light-grey)' }}>
+      {imageKeys.map((key, index) => (
+        <div
+          key={index}
+          style={{
+            width: '32px',
+            height: '32px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'var(--representing-null-color)',
+            border: '1px solid var(--separator-color)',
+          }}
+        >
+          <img
+            src={clutterImages[key]}
+            alt={`Clutter ${index + 1}`}
+            style={{ maxWidth: '100%', maxHeight: '100%' }}
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ClutterSelection;

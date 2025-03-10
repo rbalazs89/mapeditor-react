@@ -1,0 +1,18 @@
+/* constants.css (directly in root) */
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;700&display=swap');
+
+:root {
+  --dark-grey: #181818;
+  --light-grey: #1F1F1F;
+  --separator-color: #282828;
+  /* --tab-text-color: white; */
+  --representing-null-color: #444;
+  --main-font: "Cascadia Code", monospace;
+  --orange-color: rgb(255, 196, 35);
+  --yellow-color: rgb(246, 255, 0);
+  --text-color: #D4D4D4;
+  --table-top-label-background-color: #181515;
+  --table-background-color1: rgb(66, 66, 66);
+  --table-background-color2: rgb(77, 77, 77); 
+  /* font-family: 'Cascadia Code', monospac */
+}

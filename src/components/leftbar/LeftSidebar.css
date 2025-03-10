@@ -1,0 +1,116 @@
+/* src/components/leftbar/LeftSidebar.css */
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;700&display=swap');
+@import url("../../constants.css");
+
+:root {
+  --dark-grey: #181818;
+  --light-grey: #1F1F1F;
+  --separator-color: #282828;
+  --text-color: #D4D4D4;
+  --representing-null-color: #444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.resizer {
+  width: 5px;
+  cursor: ew-resize;
+  background-color: #888;
+}
+
+  .clutter-selection-element {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--representing-null-color);
+    border: 1px solid var(--separator-color);
+    cursor: pointer;
+  }
+
+  .clutter-selection-element:hover {
+    border: solid, 1px, var(--orange-color);
+  }
+  
+  .mapblock-selection-element {
+    width: 100%;
+    aspect-ratio: 1;
+    min-width: 25px; /* Minimum size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--representing-null-color);
+    border: 1px solid var(--separator-color);
+    cursor: pointer;
+    position: relative;
+}
+
+.mapblock-selection-element img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain; /* Keep images aspect-ratio correct */
+}
+
+.left-sidebar { 
+  min-width: 100px;
+  max-width: 500px;
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Vertical scrolling only */
+  background-color: var(--light-grey);
+  box-sizing: border-box;
+  display: flex;
+  border-top: solid, 1px, var(--separator-color);
+  flex-direction: column;
+  color: var(--text-color)
+}
+
+  .mapblock-selection-element:hover {
+    border: solid, 1px, var(--yellow-color);
+    
+  }
+
+  .switch-page-button {
+    background-color: var(--dark-grey);
+    color: var(--text-color);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  
+  /* Hover effect only if not disabled */
+  .switch-page-button:not(:disabled):hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light highlight */
+  }
+  
+  /* Click effect if not disabled */
+  .switch-page-button:not(:disabled):active {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly darker highlight */
+    transform: scale(0.95); /* Slight press effect */
+  }
+  
+  /* Disabled button */
+  .switch-page-button:disabled {
+    background-color: var(--light-grey);
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  .tile-selection-element {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .tile-selection-element:hover {
+    outline: 2px solid rgba(255, 23, 23, 0.8);
+    outline-offset: -2px;
+  }

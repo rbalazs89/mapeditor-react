@@ -1,0 +1,6 @@
+public void setMap1(){
+        clutter[0] = new Clutter();
+        clutter[0].worldX = 96;
+        clutter[0].worldY = 228;
+        clutter[0].image = setup("/clutter/a1/bush1");
+}

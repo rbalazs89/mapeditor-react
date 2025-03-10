@@ -1,0 +1,60 @@
+//src/components/leftbar/ClutterSelection.js
+import React, { useState } from 'react';
+import clutterImages from '../../import/clutter'; // Import the generated clutter file
+
+const ITEMS_PER_PAGE = 50;
+
+const ClutterSelection = () => {
+  const imageKeys = Object.keys(clutterImages);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const totalPages = Math.ceil(imageKeys.length / ITEMS_PER_PAGE);
+  const startIndex = currentPage * ITEMS_PER_PAGE;
+  const currentItems = imageKeys.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePrevPage = () => {
+    if (currentPage > 0) setCurrentPage(currentPage - 1);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages - 1) setCurrentPage(currentPage + 1);
+  };
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'var(--light-grey)', padding: '8px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2px', justifyContent: 'center' }}>
+        {currentItems.map((key, index) => (
+          <div
+            key={index}
+            style={{
+              width: '32px',
+              height: '32px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'var(--representing-null-color)',
+              border: '1px solid var(--separator-color)',
+            }}
+          >
+            <img
+              src={clutterImages[key]}
+              alt={`Clutter ${startIndex + index + 1}`}
+              style={{ maxWidth: '100%', maxHeight: '100%' }}
+            />
+          </div>
+        ))}
+      </div>
+      <div style={{ marginTop: '8px', display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <button onClick={handlePrevPage} disabled={currentPage === 0} style={{ cursor: 'pointer', fontSize: '16px' }}>
+          {'<'}
+        </button>
+        <span>Page {currentPage + 1} of {totalPages}</span>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages - 1} style={{ cursor: 'pointer', fontSize: '16px' }}>
+          {'>'}
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ClutterSelection;

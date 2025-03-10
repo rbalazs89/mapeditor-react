@@ -1,0 +1,11 @@
+public void setMap3(){
+        mapBlock[0] = new MapBlock();
+        mapBlock[0].worldX = 2624;
+        mapBlock[0].worldY = 2400;
+        mapBlock[0].image = setup("/mapblock/a1/tortoiseden");
+
+        mapBlock[1] = new MapBlock();
+        mapBlock[1].worldX = 2432;
+        mapBlock[1].worldY = 1792;
+        mapBlock[1].image = setup("/mapblock/a1/hole");
+}

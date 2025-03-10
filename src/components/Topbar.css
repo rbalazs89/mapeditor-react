@@ -1,0 +1,237 @@
+/* Topbar.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;700&display=swap');
+@import url("../constants.css");
+
+/* :root {
+    --dark-grey: #181818;
+    --light-grey: #1F1F1F;
+    --separator-color: #282828;
+    --text-color: #D4D4D4;
+  } */
+
+  .top-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 90px;
+    width: 100%;
+    background-color: var(--dark-grey);
+    color: var(--text-color);
+    font-family: 'Cascadia Code', monospace;
+  }
+
+  .map-name {
+    height: 20px;
+    /* background: linear-gradient(to right, var(--dark-grey) 00%, #5a4b78 3%, #5a4b78 6%, var(--dark-grey) 20%); */
+    background: linear-gradient(to right, var(--dark-grey) 00%, #312942 3%, #312942 6%, var(--dark-grey) 20%);
+    font-weight: bold;
+    font-size: 18px;
+    color: #D4D4D4;
+    font-family: 'Cascadia Code', monospace;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-indent: 30px;
+    width: 100%;
+  }
+
+  .separator {
+    height: 1px;
+    background-color: var(--separator-color);
+    width: 100%;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .everything-else-topbar-container {
+    display: flex;
+    justify-content: space-between; /* Distributes sections: left, center, right */
+    align-items: center; /* Ensures everything is vertically centered */
+    width: 100%;
+    flex-grow: 1;
+    padding: 0px 0px; /* Optional: some spacing */
+  }
+  
+  
+  .always-visible-buttons-container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Push content to the bottom */
+    flex: 3;
+    margin-top: auto; 
+    background-color: var(--light-grey);
+    padding-left: 5px;
+    height: 39px;
+    border-left: 1px solid var(--separator-color);
+    border-top: 1px solid var(--separator-color);
+    border-bottom: 1px solid var(--separator-color);
+    gap: 15px;
+}
+  
+  .global-buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    background: linear-gradient(to left, var(--dark-grey) 0%, #263033 2%, var(--dark-grey) 100%);
+    /* background: radial-gradient(
+    ellipse at center,
+    #2c4a55 0%,
+    #5a5a5a 90%,
+    var(--dark-grey) 100%
+); */
+    border: solid, 1px, var(--separator-color);
+    gap: 3px;
+    height: 70px;
+    margin-top: -1px;
+  }
+
+  .global-button {
+    padding: 5px, 4px, 4px, 4px;
+    margin: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    transition: background-color 0.2s, transform 0.1s;
+    border-radius: 4px; /* Optional: Adds a slight rounded edge */
+  }
+  
+  /* Hover effect */
+  .global-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light highlight */
+  }
+  
+  /* Click effect */
+  .global-button:active {
+    transform: scale(0.97); /* Slight shrink effect on click */
+    background-color: rgba(255, 255, 255, 0.2); /* Light highlight */
+  }
+
+  .my-button {
+    margin: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    transition: background-color 0.2s, transform 0.1s;
+    border-radius: 4px; /* Optional: Adds a slight rounded edge */
+  }
+
+  /* Hover effect */
+  .my-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light highlight */
+  }
+  
+  /* Click effect */
+  .my-button:active {
+    transform: scale(0.97); /* Slight shrink effect on click */
+    background-color: rgba(255, 255, 255, 0.2); /* Light highlight */
+  }
+
+  .my-boolean-button {
+    margin: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    transition: background-color 0.2s, transform 0.1s;
+    border-radius: 4px;
+  }
+  
+  .my-boolean-button.active {
+    background-color: #393939; /* Darker when active */
+    /* border: 1px solid #444; */
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Ensure the image fits */
+  .my-icon {
+    width: 30px;
+    height: 30px;
+    /* display: block; */
+    pointer-events: none; /* Prevents image from interfering with clicks */
+  }
+
+  .global-icon{
+    width: 60px;
+    height: 60px;
+    pointer-events: none; /* Prevents image from interfering with clicks */
+  }
+
+  .tabs-and-buttons-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: stretch; /* Make children take full width */
+    flex: 3; /* Takes available space on the left */
+    background-color: var(--dark-grey);
+    height: 100%; /* Ensure it takes full height */
+}
+
+  .tabs {
+    display: flex;
+    align-items: center;  
+    justify-content: flex-start;
+    background-color: var(--dark-grey);
+    flex: 5; /* 40% of the total space (relative weight of 4) */
+    /* min-height: 0; Ensures it doesn't overflow unexpectedly */
+}
+
+  .tab {
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: var(--dark-grey);
+    color: var(--text-color);
+    border: 1px solid var(--separator-color);
+    border-bottom: none;
+    margin-bottom: -1px;
+    top: -0px;
+    position: relative;
+    /* z-index: 1; */
+    transition: background-color 0.3s ease;
+    font-family: 'Cascadia Code', monospace;
+    /* overflow: hidden; */
+  }
+  
+
+  .tab:hover::before {
+    content: "";
+    position: absolute;
+    inset: 3px; /* Shrinks the highlight area inside */
+    background-color: #2a2a2a;
+    border-radius: 6px;
+    z-index: -1; /* Keeps it behind the text */
+}
+  
+  .tab:hover {
+    background-color: #2a2a2a;
+}
+.tab.active {
+  background-color: var(--light-grey) !important;
+  border-color: var(--separator-color);
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.tab.active:hover {
+  background-color: var(--light-grey) !important;
+}
+
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-top: 1px solid var(--separator-color);
+    border-bottom: 1px solid var(--separator-color);
+    width: 100%;
+    padding: 0px 30px;
+    gap: 15px;
+    background-color: var(--light-grey);
+    flex: 6; /* 60% of the total space (relative weight of 6) */
+    min-height: 0;
+}
